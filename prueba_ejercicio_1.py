@@ -11,29 +11,23 @@ async def hello():
     events = []
     async with websockets.connect("ws://209.126.82.146:8080") as websocket:
         while True:        
-            dic = await websocket.recv()
-            dic = json.loads(dic)
+            dic = json.loads(await websocket.recv())
+            
+            if is_even(dic["b"]):
+                even +=1
+            
+            if is_prime(dic["b"]):
+                prime += 1
+
+            if is_odd(dic["b"]):
+                odd +=1
             
             events.append(dic)
 
             if len(events) == 100:
                 break
-        print(events)
-       
-        for n in events:
-            if is_even(n["b"]):
-                even +=1
-                
-        for n in events:
-            if is_prime(n["b"]):
-                prime += 1
-                
-        for n in events:
-            if is_odd(n["b"]):
-                odd +=1
-                
-            
-    
+        
+        
         minimo = min(events, key=lambda k:k["b"])
         min_number = minimo["b"]
 
@@ -56,8 +50,8 @@ async def hello():
         "number_of_odd_numbers": odd,
         }
         
-        
-        print("--------------------------------------------------------------------------------------------------------------------------------")
+        print(events)
+        print("x" * 150)
         for s,m in struct.items():
             print(f"{s}: {m}")
 
