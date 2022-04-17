@@ -1,15 +1,15 @@
 import math
 
 def is_even(n):
-    return n %2 == 0
+    return n % 2 == 0
 
 
-def is_prime(n):
-    if n < 2:
-        return False
-    raiz = int(math.sqrt(n)) + 1
-    for i in range(2, raiz):
-        return n % i == 0
+def is_prime(numero):
+    count = 0
+    for i in range(1, numero + 1):
+        if numero % i == 0:
+            count += 1
+    return count == 2
             
         
 def is_odd(n):
