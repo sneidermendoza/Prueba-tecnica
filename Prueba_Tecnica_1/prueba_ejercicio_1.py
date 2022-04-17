@@ -40,19 +40,19 @@ async def tom():
         last_number = ultimo["b"]
 
         struct = {
-        "max_number": max_number,
-        "min_number": min_number,
-        "first_number": first_number,
-        "last_number": last_number,
-        "number_of_prime_numbers": prime,
-        "number_of_even_numbers": even,
-        "number_of_odd_numbers": odd,
+                "max_number": max_number,
+                "min_number": min_number,
+                "first_number": first_number,
+                "last_number": last_number,
+                "number_of_prime_numbers": prime,
+                "number_of_even_numbers": even,
+                "number_of_odd_numbers": odd,
         }
         
         print(events)
         print("x" * 150)
         for s,m in struct.items():
-            print(f"{s}: {m}")
+            print(f"{key}: {value}")
 
 
 
