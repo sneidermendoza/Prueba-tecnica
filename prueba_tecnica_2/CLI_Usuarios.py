@@ -1,7 +1,6 @@
 import argparse
 import json
 
-lista_usuarios= []
 
 class Usuario():
     def __init__(self, id, nombres, apellidos, edad, email):
@@ -18,10 +17,7 @@ class Usuario():
     @classmethod
     def listar(self):
         f = open('data.json', 'r')
-        f.read()
-        dic = json.loads(f.read())
-        lista_usuarios.append(dic)
-        return lista_usuarios
+        return f.read()
 
     def buscar(self):
         pass
